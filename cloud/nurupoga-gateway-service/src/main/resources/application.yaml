@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: gateway-service
+  profiles:
+    include:
+      - common
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 8080
+unmatched:
+  all:
+    - /api/auth/**
+    - /api/gitee/**
+    - /api/post/all
+    - /api/post/info
+    - /api/comment/all
+    - /api/comment/info
+    - /api/user/info
+    - /api/tag/all
+    - /api/follow/isFollowing
+    - /api/follow/followers
+    - /api/follow/following
+    - /api/follow/followerCount
+    - /api/follow/followingCount
+    - /api/**/v3/api-docs
+    - /v3/api-docs/**
+    - /swagger-ui.html
+    - /webjars/swagger-ui/**
